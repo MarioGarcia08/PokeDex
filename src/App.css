@@ -1,0 +1,247 @@
+* {
+  font-family: Ubuntu;
+  z-index: 5;
+}
+
+body {
+  background-color: rgb(255, 242, 0);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.grid-general {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  gap: 20px 30px;
+  justify-self: center;
+}
+
+.buscador {
+  grid-column: span 3;
+  border: none;
+  height: 40px;
+  font-size: larger;
+  text-align: center;
+  opacity: 0.9;
+  color: grey;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.407);
+}
+
+/* DECORACIÓN FONDO */
+.oreja1 {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  rotate: 45deg;
+}
+
+.oreja2 {
+  background-color: black;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: -50px;
+  right: -50px;
+  rotate: 45deg;
+}
+
+.moflete1 {
+  background-color: rgb(255, 0, 0);
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: -100px;
+  left: -100px;
+}
+
+.moflete2 {
+  background-color: rgb(255, 0, 0);
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  position: fixed;
+  bottom: -100px;
+  right: -100px;
+}
+
+/* ESTILO DE CADA TARJETA */
+
+.tarjeta {
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.407);
+  border: 2px solid rgb(164, 164, 164);
+  border-radius: 2px;
+}
+
+.tarjeta,
+.contenido,
+p {
+  background-color: white;
+}
+
+/* IMAGEN E ID */
+
+.imagen {
+  background-color: rgb(212, 212, 212);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+img {
+  width: 150px;
+}
+
+figure {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.id {
+  background-color: rgb(208, 188, 175);
+  color: rgb(98, 24, 24);
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: absolute;
+  margin: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* CONTENIDO TARJETA */
+
+.contenido {
+  padding: 20px;
+  margin-top: -20px;
+}
+
+.nombre {
+  font-size: x-large;
+  font-weight: bold;
+  color: black;
+}
+
+.tipos {
+  display: flex;
+  gap: 5px;
+  margin-top: -25px;
+}
+
+.tipo {
+  color: rgb(171, 151, 138);
+  border: 1px solid rgb(208, 188, 175);
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: small;
+}
+
+.palo {
+  background-color: rgb(112, 57, 31);
+  width: 5px;
+  height: 40px;
+}
+
+.texto-evol {
+  color: rgb(171, 151, 138);
+  width: max-content;
+  margin-left: 10px;
+  margin-top: -40px;
+  font-size: small;
+}
+
+.nombre-evol {
+  width: max-content;
+  margin-left: 10px;
+  margin-top: -15px;
+  font-size: large;
+  color: black;
+}
+
+/* VENTANA FLOTANTE */
+.ventanaFlotante{
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.629);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* TARJETA FLOTANTE Y SU CONTENIDO */
+.ventanaFlotante > .tarjeta{
+  width: 400px;
+  height: 500px;
+}
+
+.ventanaFlotante > .tarjeta > .imagen > :nth-child(1){
+  width: 250px;
+  height: 250px;
+}
+
+.ventanaFlotante > .tarjeta > .imagen > :nth-child(2){
+  font-size: x-large;
+}
+
+.ventanaFlotante > .tarjeta > .contenido{
+  padding-left: 30px;
+}
+
+.ventanaFlotante > .tarjeta > .contenido > .nombre{
+  font-size: 200%;
+}
+
+.ventanaFlotante > .tarjeta > .contenido > .tipos > :nth-child(1), .ventanaFlotante > .tarjeta > .contenido > .tipos > :nth-child(2) {
+  font-size: 100%;
+}
+
+.ventanaFlotante > .tarjeta > .contenido > .preevo > .palo{
+  width: 8px;
+  height: 60px;
+}
+
+.ventanaFlotante > .tarjeta > .contenido > .preevo > .texto-evol{
+  font-size: large;
+  margin-left: 15px;
+  margin-top: -55px;
+}
+
+.ventanaFlotante > .tarjeta > .contenido > .preevo > .nombre-evol{
+  font-size: larger;
+  margin-left: 15px;
+  margin-top: -20px;
+}
+
+/* MEDIA QUERIES PARA DISEÑO RESPONSIVE */
+@media (max-width: 972px) {
+  .grid-general {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+  }
+  .buscador {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 642px) {
+  .grid-general {
+    display: grid;
+    grid-template-columns: repeat(1, 300px);
+  }
+  .buscador {
+    grid-column: span 1;
+  }
+}
